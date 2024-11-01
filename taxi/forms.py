@@ -7,22 +7,22 @@ class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
         fields = UserCreationForm.Meta.fields + (
-            'license_number',
-            'first_name',
-            'last_name',
+            "license_number",
+            "first_name",
+            "last_name",
         )
 
 
-class DriverUpdateLicenceForm(forms.ModelForm):
+class DriverLicenseUpdateForm(forms.ModelForm):
     class Meta:
         model = Driver
-        fields = ('license_number',)
+        fields = ("license_number",)
 
 
 class CarForm(forms.ModelForm):
     class Meta:
         model = Car
-        fields = '__all__'
+        fields = "__all__"
         widgets = {
-            'drivers': forms.CheckboxSelectMultiple(),  # Customize 'drivers' field
+            "drivers": forms.CheckboxSelectMultiple(),
         }
